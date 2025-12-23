@@ -1,0 +1,362 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/dda2323347.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="{% static 'images/main-logo.png' %}" class="logo" alt="Main-logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a  href="{% url 'index' %}">Home</a></li>
+                <li><div class="dropdown">
+                    <button  class="dropbtn">Shop <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'men' %}">Mens</a> 
+                        <a href="{% url 'women' %}">Womens</a>
+                        <a href="{% url 'kid' %}">Kids</a>
+                    </div>
+                </div></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><div class="dropdown">
+                    <button class="dropbtn">
+                        {% if user.is_authenticated %}
+                            <i class="fa-solid fa-user"></i> {{ user.username }}
+                        {% else %}
+                            <i class="fa-solid fa-user"></i>
+                        {% endif %}
+                    </button>
+                    <div class="dropdown-content">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'profile' %}">Profile</a>
+                            <a href="{% url 'logout' %}">Log Out</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Log In</a>
+                            <a href="{% url 'signup' %}">Sign Up</a>
+                        {% endif %}
+                    </div>
+                </div></li>
+                    <a href="{% url 'cart' %}" >
+                        <i class="fa-solid fa-cart-shopping"></i><sup><span id="cart-count">0</span></sup>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="men-header">
+        <h2>#Mens</h2>
+        <p>Save more with coupons & up to 70% off!</p>
+    </section>
+    </section>
+    <section id="product1" class="section-p1">
+            <div class="pro-container">
+                <div class="pro" data-id="product-1">
+                    <img src="{% static 'images\Adidas(Superstar Shoes)men.avif'%}" alt="">
+                    <div class="des">
+                        <span>Adidas</span>
+                        <h5>Superstar Shoes</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹4 949.50 </h4>
+                    </div>
+                   <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                </div>
+                <div class="pro" data-id="product-2">
+                    <img src="{% static 'images\Nike(AIR JORDAN 1 MID)men.png'%}" alt="">
+                    <div class="des">
+                        <span>Nike</span>
+                        <h5>Air Jordan 1 Mids</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i> 
+                        </div>
+                        <h4>₹11 495.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-3">
+                    <img src="{% static 'images\Puma(Suede-XL-Unisex-Sneakers)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Puma</span>
+                        <h5>Suede XL  Sneakerss</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹6 299.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-4">
+                    <img src="{% static 'images\Adidas(Campus 00s Shoes)men.avif'%}" alt="">
+                    <div class="des">
+                        <span>Adidas</span>
+                        <h5>Campus 00s Shoes</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹10 999.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-5">
+                    <img src="{% static 'images\Puma(Smashic-Unisex-Sneakers)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Puma</span>
+                        <h5>Smashic Sneakers</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹2 109.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></i></a>
+                </div>
+                <div class="pro" data-id="product-6">
+                    <img src="{% static 'images\New Balance(Men 327 Lace-Up Sneakers)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>New Balance</span>
+                        <h5>Men 327 Lace-Up Sneakerss</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹5 899.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-7">
+                    <img src="{% static 'images\Reebok(FLOATRIDE ENERGY 5 ADVENTURE)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Reebok</span>
+                        <h5>Floatride Energy 5 Adventure</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹8 399.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-8">
+                    <img src="{% static 'images\Nike(NOCTA Air Force 1)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Nike</span>
+                        <h5>Nocta Air Force 1</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹14 955.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-9">
+                    <img src="{% static 'images/Skechers(TRES-AIR UNO - VISION-AIRY SLIP-INS)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Skechers</span>
+                        <h5>Tres -Air Uno - Vision-Airy Slip-Ins</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹8 999.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-10">
+                    <img src="{% static 'images/Converse(Chuck Taylor All Star)men.webp'%}" alt="">
+                    <div class="des">
+                        <span>Converse</span>
+                        <h5>Chuck Taylor All Star</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹4 799.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-11">
+                    <img src="{% static 'images/Vans(Authentic Shoe)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Vans</span>
+                        <h5>Authentic Shoe</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹8 299.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-12">
+                    <img src="{% static 'images/Sparx(Sneakers for Men SM 957)men.jpg'%}" alt="">
+                    <div class="des">
+                        <span>Sparx</span>
+                        <h5>Sneakers for Men SM 957</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹1 699.00 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-13">
+                    <img src="{% static 'images\Power(WHITE SPORTS SHOES)men.avif'%}" alt="">
+                    <div class="des">
+                        <span>Power</span>
+                        <h5> White Sports Shoes</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹2 109.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></i></a>
+                </div>
+                <div class="pro" data-id="product-14">
+                    <img src="{% static 'images/Converse(Chuck 70 Canvas)men.webp'%}" alt="">
+                    <div class="des">
+                        <span>Converse</span>
+                        <h5>Chuck 70 Canvas</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹5 499.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-15">
+                    <img src="{% static 'images\Power(BLACK SPORTS SHOES)men.avif'%}" alt="">
+                    <div class="des">
+                        <span>Power</span>
+                        <h5></h5> Black Sports Shoes</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹1 699.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <div class="pro" data-id="product-16">
+                    <img src="{% static 'images\Skechers(BOBS SPORT SQUAD CHAOS- Daily Hype)men.webp'%}" alt="">
+                    <div class="des">
+                        <span>Skechers</span>
+                        <h5>Bobs Sport Squad Chaos- Daily Hype</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>₹4 199.50 </h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                </div>
+            </div>
+    </section>
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+    <section id="bar">
+            <h4>" Walk with confidence, wear with style "</h4>
+    </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{% static 'images/main-logo.png'%}" alt="" srcset="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>Aggarwal City Square, Plot No. 10, <br><br>Manglam Place, District Center, Rohini Sector-3,<br><br> Delhi - 110085</p>
+            <p><strong>Phone:(+91) 94006 38144</strong></p>
+            <p><strong>Hours:</strong>10:00 - 18:00,Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wislist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="pay">
+            <h4>Secured Payment Gateway</h4>
+            <img src="{% static 'images/payment.png'%}" alt="" srcset="">
+        </div>
+        <div class="copyright">
+            <p>© 2025 Hyper, Inc. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+    <style>
+        #men-header{
+            background-image: url("{% static 'images/men_banner.jpg'%}");
+        }
+    </style>
+</body>
+</html>

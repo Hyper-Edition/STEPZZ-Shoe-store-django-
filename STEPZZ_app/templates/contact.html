@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hyper Inc.</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/dda2323347.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'images/main-logo.png' %}" class="logo" alt="Main-logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><div class="dropdown">
+                    <button class="dropbtn">Shop <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'men' %}">Mens</a>
+                        <a href="{% url 'women' %}">Womens</a>
+                        <a href="{% url 'kid' %}">Kids</a>
+                    </div>
+                </div></li>
+                <li><a class="active" href="{% url 'contact' %}">Contact</a></li>
+                <li><div class="dropdown">
+                    <button class="dropbtn">
+                        {% if user.is_authenticated %}
+                            <i class="fa-solid fa-user"></i> {{ user.username }}
+                        {% else %}
+                            <i class="fa-solid fa-user"></i>
+                        {% endif %}
+                    </button>
+                    <div class="dropdown-content">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'profile' %}">Profile</a>
+                            <a href="{% url 'logout' %}">Log Out</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Log In</a>
+                            <a href="{% url 'signup' %}">Sign Up</a>
+                        {% endif %}
+                    </div>
+                </div></li>                
+                <li>
+                    <a href="{% url 'cart' %}">
+                        <i class="fa-solid fa-cart-shopping"></i><sup><span id="cart-count">0</span></sup>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact-main section-p1">
+        <div class="contact-container">
+            <div class="contact-details">
+                <h2>Get In Touch</h2>
+                <h3>Visit Our Office or Contact Us Today</h3>
+                <div>
+                    <h4>Head Office</h4>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Aggarwal City Square, Plot No. 10,<br>
+                        Manglam Place, District Center,<br>
+                        Rohini Sector-3, Delhi - 110085
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        (+91) 94006 38144
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        support@hyperinc.com
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-clock"></i>
+                        Monday - Saturday: 10:00 - 18:00<br>
+                        Sunday: Closed
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.966372519289!2d77.0866723150885!3d28.728370782379673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d07ca56b75619%3A0x3b0055b7a97b3f3c!2sAggarwal%20City%20Mall!5e0!3m2!1sen!2sin!4v1691255687299!5m2!1sen!2sin" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{% static 'images/main-logo.png'%}" alt="" srcset="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>Aggarwal City Square, Plot No. 10, <br><br>Manglam Place, District Center, Rohini Sector-3,<br><br> Delhi - 110085</p>
+            <p><strong>Phone:(+91) 94006 38144</strong></p>
+            <p><strong>Hours:</strong>10:00 - 18:00,Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wislist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="pay">
+            <h4>Secured Payment Gateway</h4>
+            <img src="{% static 'images/payment.png'%}" alt="" srcset="">
+        </div>
+        <div class="copyright">
+            <p>© 2025 Hyper, Inc. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
