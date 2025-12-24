@@ -31,39 +31,46 @@ This is a college minor project - a fully functional e-commerce website for sell
 
 ### Project Structure
 ├── STEPZZ_app/ # Django app
+
 ├── static/ # Static files (CSS, JS, images)
+
 ├── templates/ # HTML templates
+
 ├── manage.py
+
 ├── requirements.txt
+
 └── README.md
 
 ### Screenshots
+-----Home Page-----
 ![Home Page](images/Home.png)
-Home Page
 
+-----Mens Page-----
 ![Mens Page](images/Mens.png)
-Mens Page
 
+
+-----Womens Page-----
 ![Womens Page](images/Womens.png)
-Womens Page
 
+-----Kids Page-----
 ![Kids Page](images/Kids.png)
-Kids Page
 
+-----Profile Page------
 ![Profile Page](images/Profile.png)
-Profile Page
 
+-----Contact Page-----
 ![Contact Page](images/Contact.png)
-Contact Page
 
+-----Cart Page-----
 ![Cart Page](images/Cart.png)
-Cart Page
 
+-----Cart Page with Product-----
 ![Cart Page with Product](<images/Cart fill.png>)
-Cart Page with Product
 
 ### Developer
 Abdurrahman Ibn Ebrahim
 Government Polytechnic College Cherthala
+
 Mail:abdurrahmanibnebrahim24@gmail.com
 LinkedIn:www.linkedin.com/in/abdurrahman-ibn-ebrahim-aa7a132ab
