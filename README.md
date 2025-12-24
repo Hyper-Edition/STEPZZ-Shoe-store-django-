@@ -9,7 +9,6 @@ This is a college minor project - a fully functional e-commerce website for sell
 - User authentication (Login/Signup)
 - Product catalog (Men, Women, Kids categories)
 - Shopping cart functionality
-- Payment integration
 - Responsive design
 
 ### Tech Stack
