@@ -67,9 +67,16 @@ This is a college minor project - a fully functional e-commerce website for sell
 -----Cart Page with Product-----
 ![Cart Page with Product](<images/Cart fill.png>)
 
+-----Payment Page-----
+![Payment Page](images/Payment.png)
+
+-----Thank Page-----
+![Thank Page](images/Thank.png)
+
 ### Developer
 Abdurrahman Ibn Ebrahim
 Government Polytechnic College Cherthala
 
 Mail:abdurrahmanibnebrahim24@gmail.com
+
 LinkedIn:www.linkedin.com/in/abdurrahman-ibn-ebrahim-aa7a132ab
